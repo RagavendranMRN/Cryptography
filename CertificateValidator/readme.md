@@ -60,3 +60,6 @@
 |  | `-key server.key` | Specifies the private key for the CSR |
 |  | `-out server.csr` | Specifies the output file for the CSR |
 |  | `-subj "/C=US/ST=State/L=City/O=MyOrg/CN=mywebsite.com"` | Defines the subject details for the CSR |
+
+## Generate Certificate
+```openssl x509 -req -in server.csr -CA rootCA.pem -CAkey rootCA.key -CAcreateserial -out certificate.pem -days 365 -sha256```
