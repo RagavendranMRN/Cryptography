@@ -50,3 +50,13 @@
 | `openssl genpkey` | `-algorithm RSA` | Generates a private key for the server/client |
 |  | `-out server.key` | Specifies the output file for the private key |
 |  | `-pkeyopt rsa_keygen_bits:2048` | Sets the key size to 2048 bits |
+
+## Request Certificate Signing.
+```openssl req -new -key server.key -out server.csr -subj "/C=US/ST=State/L=City/O=MyOrg/CN=mywebsite.com"```
+
+| Command | Option | Description |
+|---------|--------|-------------|
+| `openssl req` | `-new` | Creates a new certificate signing request (CSR) |
+|  | `-key server.key` | Specifies the private key for the CSR |
+|  | `-out server.csr` | Specifies the output file for the CSR |
+|  | `-subj "/C=US/ST=State/L=City/O=MyOrg/CN=mywebsite.com"` | Defines the subject details for the CSR |

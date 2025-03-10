@@ -11,3 +11,6 @@ keytool -import -trustcacerts -file rootCA.pem -alias myCustomCA -keystore trust
 
 #Generate Private Key for the Server/Client
 openssl genpkey -algorithm RSA -out server.key -pkeyopt rsa_keygen_bits:2048
+
+#Generate Certificate Signing Request.
+openssl req -new -key server.key -out server.csr -subj "/C=US/ST=State/L=City/O=MyOrg/CN=mywebsite.com"
