@@ -29,3 +29,15 @@
 |/ST|State|
 |/O|Organization Name|
 |/CN| Common Name (usually the Root CA name)|
+
+## Add the Root CA in the trust Store
+```keytool -import -trustcacerts -file rootCA.pem -alias myCustomCA -keystore truststore.jks -storepass changeit```
+
+| Command | Option | Description |
+|---------|--------|-------------|
+| `keytool` | `-import` | Imports a certificate into a keystore |
+|  | `-trustcacerts` | Specifies that the certificate is a trusted CA |
+|  | `-file rootCA.pem` | Specifies the certificate file to import |
+|  | `-alias myCustomCA` | Sets an alias name for the imported certificate |
+|  | `-keystore truststore.jks` | Specifies the keystore file |
+|  | `-storepass changeit` | Defines the password for the keystore |
