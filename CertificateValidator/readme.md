@@ -41,3 +41,12 @@
 |  | `-alias myCustomCA` | Sets an alias name for the imported certificate |
 |  | `-keystore truststore.jks` | Specifies the keystore file |
 |  | `-storepass changeit` | Defines the password for the keystore |
+
+## Generate Private Key for the Server/Client
+```openssl genpkey -algorithm RSA -out server.key -pkeyopt rsa_keygen_bits:2048```
+
+| Command | Option | Description |
+|---------|--------|-------------|
+| `openssl genpkey` | `-algorithm RSA` | Generates a private key for the server/client |
+|  | `-out server.key` | Specifies the output file for the private key |
+|  | `-pkeyopt rsa_keygen_bits:2048` | Sets the key size to 2048 bits |

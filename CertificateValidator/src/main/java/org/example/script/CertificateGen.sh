@@ -8,3 +8,6 @@ openssl req -x509 -new -nodes -key rootCA.key -sha256 -days 3650 -out rootCA.pem
 
 #Add the Root CA in the trust Store
 keytool -import -trustcacerts -file rootCA.pem -alias myCustomCA -keystore truststore.jks -storepass changeit
+
+#Generate Private Key for the Server/Client
+openssl genpkey -algorithm RSA -out server.key -pkeyopt rsa_keygen_bits:2048
